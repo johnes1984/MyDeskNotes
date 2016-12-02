@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="miapp">
+<head>
+	<meta charset="UTF-8">
+	<title>Lines</title>
+
+    
+    <script src="https://cdn.socket.io/socket.io-1.3.4.js"></script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.10.2/paper-full.js"></script>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+	<script type="text/javascript" src="./js/index2.js"></script>
+
+</head>
+<body ng-controller="PaperController">
+	
+
+<canvas id="canvas" resize ng-mousedown="mouseDown($event)" ng-mousemove="mouseDrag($event)" ng-mouseup="mouseUp()"></canvas>
+
+	<br>
+	<br>
+  	<select name="cuaderno" ng-model="data.cuaderno">
+      <option ng-repeat="cuaderno in cuadernos" value="{{cuaderno.id}}">{{cuaderno.nombre}}</option>
+    </select>
+	
+	<select name="hojas" ng-model="data.hoja">
+      <option ng-repeat="hoja in hojas" value="{{hoja.id}}">{{hoja.nombre}}</option>
+    </select>
+
+	<select name="color" ng-model="data.color">
+      <option ng-repeat="color in colores" value="{{color.id}}">{{color.nombre}}</option>
+    </select>
+
+	
+
+	<input type="button" value="Enviar" ng-click="fncGuardaEspacio(data)">
+
+
+	
+</body>
+
+</html>
