@@ -1,4 +1,4 @@
-var socket = io.connect('http://192.168.1.60:3001'); 
+var socket = io.connect('http://192.168.1.55:3001'); 
 
 var app = angular.module("miapp", []);
       
